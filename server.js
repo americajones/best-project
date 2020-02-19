@@ -17,6 +17,9 @@ var db = require("./models");
 // Static directory
 app.use(express.static("public"));
 
+//pug connection
+app.set("view engine", "pug");
+
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
