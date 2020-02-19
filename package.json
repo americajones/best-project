@@ -17,6 +17,7 @@
     "fs": "0.0.1-security",
     "mysql2": "^2.1.0",
     "path": "^0.12.7",
+    "pug-cli": "^1.0.0-alpha6",
     "sequelize": "^5.21.4"
   },
   "devDependencies": {
