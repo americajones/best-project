@@ -6,7 +6,7 @@ head
 
     title best app
 body
--let User = {loggedOn: true}
+-let User = {loggedOn: false}
     if User.loggedOn 
     
         include includes/nav
@@ -21,7 +21,7 @@ body
 
 
     else
-        a.sign_up(href="#") sign up for an account to create a review!
+        a.sign_up(href="signup") sign up for an account to create a review!
         h1.intro Your Next Binge!
 
         .search_box 

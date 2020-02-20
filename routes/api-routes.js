@@ -49,4 +49,35 @@ module.exports = function(app) {
         console.log(req.body)
       }
     });
+
+
+app.get("/api/movies/reviews", function(req, res) {
+  db.Movie.findAll({}).then(function(dbMovie) {
+    res.json(dbMovie);
+  });
+});
+
+app.get("/api/movies/reviews", function(req, res) {
+  
+});
+app.post("/api/movies/reviews", function(req, res) {
+  
+});
+
+app.get("/api/books/reviews", function(req, res) {
+  
+});
+
+app.post("/api/books/reviews", function(req, res) {
+  
+});
+
+app.get("/api/podcasts/reviews", function(req, res) {
+  
+});
+
+app.get("/api/podcasts/reviews", function(req, res) {
+
+});
+
 };
