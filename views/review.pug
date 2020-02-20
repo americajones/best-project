@@ -1,0 +1,18 @@
+doctype html
+html
+head
+    link(rel="stylesheet" href="../css/style.css")
+    script(src="https://code.jquery.com/jquery.js")
+    title best app
+body
+-let User = {loggedOn: true}
+    if User.loggedOn 
+        .banner_img
+        include includes/nav-clear
+        .icon_image
+            img(src="" alt="cover-image" id="icon_image")
+        .review_block
+            h2 Review Title
+            p review text
+            button(class="return_butt") Go Back
+
