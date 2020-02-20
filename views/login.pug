@@ -1,0 +1,17 @@
+doctype html
+html
+head
+    link(rel="stylesheet" href="../css/style.css")
+    script(src="https://code.jquery.com/jquery.js")
+    title best app
+body
+    form.login_box
+        h4 Log in to your account to post reviews!
+        br
+        input(class="form" type="text" id="email_input" placeholder="Email")
+        br
+        input(class="form" type="text" id="password_input" placeholder="Password")
+        br
+        button(class="submit" id="login_user" type="submit") Submit
+script
+    include ../public/js/login.js
