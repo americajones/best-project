@@ -7,10 +7,11 @@ module.exports = function(app) {
     // });
 
     app.get("/", (req, res) => {
-        if (req.user) {
-            res.redirect("/submit");
-          }
-          res.sendFile(path.join(__dirname, "../public/login.html"))
+        res.render("index")
+        // if (req.user) {
+        //     res.redirect("/submit");
+        //   }
+        //   res.sendFile(path.join(__dirname, "../public/login.html"))
     });
     
     app.get("/submit", (req, res) => {
@@ -23,5 +24,9 @@ module.exports = function(app) {
     
     app.get("/signup", (req, res) => {
         res.render("signup")
+    });
+
+    app.get("/login", (req, res) => {
+        res.render("login")
     });
 }
