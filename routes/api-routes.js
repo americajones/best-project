@@ -50,7 +50,7 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/movies/reviews", function(req, res) {
+  app.get("/api/movies", function(req, res) {
     db.Movie.findAll({}).then(function(dbMovie) {
       res.json(dbMovie);
     });
