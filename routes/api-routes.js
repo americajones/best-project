@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -6,6 +7,11 @@ module.exports = function(app) {
   });
 
   app.post("/api/signup", function(req, res) {
+  
+    console.log("are we here");
+    console.log(req);
+    console.log(req.body);
+    
     db.User.create({
       email: req.body.email,
       password: req.body.password,
