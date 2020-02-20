@@ -56,6 +56,13 @@ button {
     font-size: 90%;
 }
 
+#searchCategory {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
 /* submit page */
 
 .submit {
@@ -71,6 +78,13 @@ button {
     padding-top: 60px;
     max-width: 400px;
     margin: auto;
+}
+
+#category {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
 }
 
 /* reviews pages */
@@ -103,12 +117,6 @@ button {
     width: 150px;
 }
 
-#category {
-    padding: 3px;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-}
 
 .review_block {
     text-align: center;
