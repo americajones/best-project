@@ -42,11 +42,38 @@ module.exports = function(app) {
     }
   });
 
-    app.put("/api/user_data", function(req, res) {
-      if (!req.user) {
-        res.json({});
-      } else {
-        console.log(req.body)
-      }
+  app.put("/api/user_data", function(req, res) {
+    if (!req.user) {
+      res.json({});
+    } else {
+      console.log(req.body)
+    }
+  });
+
+  app.get("/api/movies/reviews", function(req, res) {
+    db.Movie.findAll({}).then(function(dbMovie) {
+      res.json(dbMovie);
     });
+  });
+  // ​
+  // app.post("/api/movies/reviews", function(req, res) {
+  // ​
+  // });
+  // ​
+  // app.get("/api/books/reviews", function(req, res) {
+  // ​
+  // });
+  // ​
+  // app.post("/api/books/reviews", function(req, res) {
+  // ​
+  // });
+  // ​
+  // app.get("/api/podcasts/reviews", function(req, res) {
+  // ​
+  // });
+  // ​
+  // app.post("/api/podcasts/reviews", function(req, res) {
+  // ​
+  // });
+
 };
