@@ -84,8 +84,7 @@ var movies = function(newReview) {
   //make newReview and obj(variable) with all the things in it - category, username, etc
     app.post("/api/review/movies", function(req, res) {
       db.Movie.create ({
-        title: req.body.title,
-        review: req.body.review
+        
       }).then(function(dbMovie) {
           res.json(dbMovie);
         });
