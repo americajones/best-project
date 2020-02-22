@@ -8,7 +8,8 @@ module.exports = function(app) {
 
     app.get("/", (req, res) => {
         if(req.user){
-            res.render('submit')
+            console.log
+            res.render("submit")
         }else{
             res.render("index")
         }

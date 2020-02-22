@@ -31,6 +31,9 @@ $(document).ready(function() {
     
     }, function(err, res){
       console.log(res)
+      if (res === "success"){
+        window.location = "/submit"
+      }
     })
   }
 });
