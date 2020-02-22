@@ -1,12 +1,12 @@
 var db = require("../models");
 var passport = require("../config/passport");
+// let imagequery = require("../public/js/submit")
 
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     console.log('this is user info', req.user.dataValues)
     res.redirect("/")
   });
-
 
   app.post("/api/signup", function(req, res) {
   
@@ -66,9 +66,23 @@ module.exports = function(app) {
   // ​
   // });
   // ​
-  // app.post("/api/books/reviews", function(req, res) {
-  // ​
-  // });
+
+ 
+  app.post("/api/review/books", function(req, res) {
+    console.log(req.body)
+  //   ​db.Book.create({
+  //     title: req.body.title,
+  //     author: req.body.author,
+  //     review: req.body.review
+  //     // image: imagequery.image
+  //   })
+  //     .then(function() {
+  //       res.redirect(307, "/api/reviews");
+  //     })
+  //     .catch(function(err) {
+  //       res.status(401).json(err);
+  //     });
+  });
   // ​
   // app.get("/api/podcasts/reviews", function(req, res) {
   // ​
