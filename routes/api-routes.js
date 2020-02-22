@@ -50,30 +50,88 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/movies/reviews", function(req, res) {
-    db.Movie.findAll({}).then(function(dbMovie) {
-      res.json(dbMovie);
+  //posts a review to the database
+  app.post("/api/review", function(req, res) {  
+    const newReview = req.body.newReview;
+    const category = req.body.category;
+    const dataObj = {
+      user: req.body.user,
+      category: req.body.category,
+      title: req.body.reviewTitle,
+      review: req.body.review
+    };
+    switch (category) {
+      case "movies":
+        movies(newReview);
+        break;
+      case "books": 
+        books(newReview);
+        break;
+      case "podcasts":
+        podcasts(newReview);
+        break;
+    }
+  });
+ ///MOVIES///
+//retrieves the data for all movies from the db
+app.get("/api/movies", function(req, res) {
+  db.Movie.findAll({}).then(function(dbMovie) {
+    res.json(dbMovie);
+  });
+});
+//posts a review to the database
+var movies = function(newReview) {
+  //make newReview and obj(variable) with all the things in it - category, username, etc
+    app.post("/api/review/movies", function(req, res) {
+      db.Movie.create ({
+        title: req.body.title,
+        review: req.body.review
+      }).then(function(dbMovie) {
+          res.json(dbMovie);
+        });
+    });
+  }
+///BOOKS///
+  //retrieves the data for all books from the db
+  app.get("/api/books", function(req, res) {
+    db.Book.findAll({}).then(function(dbBook) {
+        res.json(dbBook);
+  });
+});
+  //  //posts a review to the database
+var books = function() {
+  app.post("/api/review/books", function(req, res) {
+    db.Book.create ({
+      title: req.body.title,
+      author: req.body.author,
+      reviews: req.body.reviews
+    }).then(function(dbBook) {
+      res.json(dbBook);
     });
   });
-  // ​
-  // app.post("/api/movies/reviews", function(req, res) {
-  // ​
-  // });
-  // ​
-  // app.get("/api/books/reviews", function(req, res) {
-  // ​
-  // });
-  // ​
-  // app.post("/api/books/reviews", function(req, res) {
-  // ​
-  // });
-  // ​
-  // app.get("/api/podcasts/reviews", function(req, res) {
-  // ​
-  // });
-  // ​
-  // app.post("/api/podcasts/reviews", function(req, res) {
-  // ​
-  // });
+}
+///PODCASTS///
+    //retrieves the data for all podcasts from the db
+    app.get("/api/podcasts", function(req, res) {
+      db.Podcast.findAll({}).then(function(dbPodcast) {
+        res.json(dbPodcast);
+      });
+    });
 
-};
+  //  //posts a review to the database 
+var podcasts = function() {
+  app.post("/api/review/podcasts", function(req, res) {
+    db.Podcast.create ({
+      title: req.body.title,
+      reviews: req.body.reviews
+    }).then(function(dbPodcast) {
+      res.json(dbPodcast);
+    });
+  });
+}
+
+}
+
+
+
+
