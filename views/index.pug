@@ -9,27 +9,17 @@ body
     if User.loggedOn 
     
         include includes/nav
-
-        .search_box 
-            input(class="form" id="searchForm" type="text")
-            select(id="searchCategory")
-                option(value="movie") Movies
-                option(value="book") Books
-                option(value="podcast") Podcasts
-            button(class="submit" id="search" type="submit") Search
-
-
     else
-        a.sign_up(href="signup") Sign up for an account to create a review!
+        a.log_in(href="login") Log In
+        a.sign_up(href="signup") Sign Up
+        br
+
         h1.intro Your Next Binge!
 
-        .search_box 
-            input(class="form" id="searchForm" type="text")
-            select(id="searchCategory")
-                option(value="movie") Movies
-                option(value="book") Books
-                option(value="podcast") Podcasts
-            button(class="submit" id="search" type="submit") Search Reviews
+    p Reviews:
 
-script
-    include ../public/js/search.js
+    .result_row
+    
+        include includes/result
+        include includes/result
+        include includes/result
