@@ -1,4 +1,19 @@
-$(document).ready(function() {
+<!DOCTYPE html>
+<html></html>
+<head>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <title>best app</title>
+</head>
+<body>
+  <form class="login_box">
+    <h4>Log in to your account to post reviews!</h4><br>
+    <input class="form" type="text" id="email_inp" placeholder="Email"><br>
+    <input class="form" type="password" id="password_inp" placeholder="Password"><br>
+    <button class="submit" id="login_user" type="submit">Submit</button>
+  </form>
+</body>
+<script>$(document).ready(function() {
 
   // When the form is submitted, we validate there's an email and password entered
   $('#login_user').on("click", function(event) {
@@ -37,3 +52,5 @@ $(document).ready(function() {
     })
   }
 });
+
+</script>

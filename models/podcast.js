@@ -7,9 +7,10 @@ module.exports = function(sequelize, DataTypes) {
       reviews: {
         type: DataTypes.TEXT,
         allowNull: false
-      // },
-      // favorites:{
-      //   defaultValue: null
+      },
+      image:{
+        type: DataTypes.STRING,
+        defaultValue: null
       }
     });
   
