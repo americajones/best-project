@@ -6,14 +6,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     author: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
     reviews: {
       type: DataTypes.TEXT,
       allowNull: false
-    // },
-    // favorites:{
-    //   defaultValue: null
+    },
+    image:{
+      type: DataTypes.STRING,
+      defaultValue: null
     }
   });
 
