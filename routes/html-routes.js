@@ -7,14 +7,20 @@ module.exports = function(app) {
     // });
 
     app.get("/", (req, res) => {
-        res.render("index")
+        if(req.user){
+            console.log
+            res.render("submit")
+        }else{
+            res.render("index")
+        }
+    
         // if (req.user) {
         //     res.redirect("/submit");
         //   }
         //   res.sendFile(path.join(__dirname, "../public/login.html"))
     });
     
-    app.get("/submit", (req, res) => {
+    app.get("/submit", isAuthenticated , (req, res) => {
         res.render("submit")
     });
 
