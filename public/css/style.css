@@ -1,5 +1,6 @@
 /* universal css */
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 
 body {
     background-color: #455a64;
@@ -14,6 +15,10 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
+}
+
+.page_name {
+    font-family: "Rock Salt", Arial, Helvetica, sans-serif;
 }
 
 
@@ -47,6 +52,7 @@ button {
 /* index page */
 
 .intro {
+    font-family: "Rock Salt", Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 30px;
     min-width: 210px;
@@ -76,6 +82,7 @@ button {
 }
 
 .submit_box {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     max-width: 500px;
     margin: auto;
 }
