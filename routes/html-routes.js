@@ -28,6 +28,10 @@ module.exports = function(app) {
         res.render("reviews")
     });
     
+    app.get("/review", (req, res) => {
+        res.render("review")
+    });
+    
     app.get("/signup", (req, res) => {
         res.render("signup")
     });
