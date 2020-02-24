@@ -44,19 +44,20 @@ module.exports = function(app) {
     }
   });
 
-  app.put("/api/user_data", function(req, res) {
-    if (!req.user) {
-      res.json({});
-    } else {
-      console.log(req.body)
-    }
-  });
+  // app.put("/api/user_data", function(req, res) {
+  //   if (!req.user) {
+  //     res.json({});
+  //   } else {
+  //     console.log(req.body)
+  //   }
+  // });
 
   app.get("/api/movies", function(req, res) {
     db.Movie.findAll({}).then(function(dbMovie) {
       res.json(dbMovie);
     });
   });
+  
   // ​
   // app.post("/api/movies/reviews", function(req, res) {
   // ​
@@ -67,6 +68,18 @@ module.exports = function(app) {
   // });
   // ​
 
+  app.post("/api/movies", function(req, res) {
+    console.log(req.body);
+    db.Movie.create({
+      title: req.body.title,
+      reviews: req.body.reviews,
+      image: req.body.image
+    }).then(function() {
+      res.redirect(307, "/api/login");
+    }).catch(function(err) {
+      res.status(401).json(err);
+    });
+  })
  
   app.post("/api/review/books", function(req, res) {
     console.log(req.body)
