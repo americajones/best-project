@@ -1,4 +1,4 @@
-let title = ($('#title').val().trim().toLowerCase().replace(/\s+/g, '-'))
+
 // Functions Definition
 // ERR
 function handleLoginErr(err) {
@@ -26,20 +26,25 @@ function createBook(title, author, review) {
     });
 }
 // MOVIE
-function createMovie(title, review) {
+function createMovie() {
     console.log('movie working?');
+    let reviews = ($('#reviews').val().trim())
+    let title = ($('#title').val().trim().toLowerCase().replace(/\s+/g, '-')) || 'up'
     $.ajax({  
       url: `https://www.omdbapi.com/?t=${title}&apikey=b63370de`,
       method: "GET"
     }).then(function(response) {
       console.log(response.Poster);
       $.post("/api/movies", {
-          title: title,
-          reviews: reviews,
-          image: response.Poster
-      }).then (function(data) {
+          data:{
+            title: title,
+            reviews: reviews,
+            image: response.Poster
+          }
+      }).then(function(data) {
         console.log(data);
-        window.location = "/reviews";
+     window.location.href = `/review`
+        
     //   }).catch(handleLoginErr);
     //     function handleLoginErr(err) {
     //         $("#alert .msg").text(err.responseJSON);
