@@ -17,23 +17,27 @@ body
                 option(value="movie") Movie
                 option(value="book") Book
                 option(value="podcast") Podcast
-                //- -let category = {category: category.value}
                 console.log(category.value)
 
             br
             br
 
-            case category 
-                when "book"
-                    input(class="form" type="text" id="author" placeholder="Author?")
-                    br
-                    br
+            input(class="form" type="text" id="title" placeholder="Title?")  
+            br
+            br
+            //- case category 
+            //-     when "book"
+            //-         include includes/author.pug
+                
+            if category === "book"
+                    include includes/author.pug
 
-            textarea(class="form" id="review" cols="70" rows="10" placeholder="What did you think?")
+            textarea(class="form" id="reviews" cols="70" rows="10" placeholder="What did you think?")
             br
             br
             button(class="submit" id="submit_butt" type="submit") Submit
 
+        //- -let category = {category: category.value}
     //- else
     //-     h4 You must be logged on to view this page
 
