@@ -39,4 +39,8 @@ module.exports = function(app) {
     app.get("/search", (req, res) => {
         res.render("search")
     });
+
+    app.get("/review", (req, res) => {
+        res.render("review")
+    });
 }
