@@ -1,5 +1,6 @@
 var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var db = require("../models");
 
 module.exports = function(app) {
     // app.get("/", function(req, res) {
@@ -25,11 +26,16 @@ module.exports = function(app) {
     });
 
     app.get("/reviews", (req, res) => {
-        res.render("reviews")
+        console.log('rendering reviews')
+        res.render("index")
     });
-    
+
     app.get("/review", (req, res) => {
-        res.render("review")
+        db.Movie.findAll({}).then(data=>{
+           let info = data[data.length-1].dataValues
+            res.render("review", info)
+        })
+        
     });
     
     app.get("/signup", (req, res) => {

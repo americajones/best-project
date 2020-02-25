@@ -57,7 +57,7 @@ module.exports = function(app) {
       res.json(dbMovie);
     });
   });
-  
+
   // ​
   // app.post("/api/movies/reviews", function(req, res) {
   // ​
@@ -69,14 +69,15 @@ module.exports = function(app) {
   // ​
 
   app.post("/api/movies", function(req, res) {
-    console.log(req.body);
+    console.log(req.body.data);
     db.Movie.create({
-      title: req.body.title,
-      reviews: req.body.reviews,
-      image: req.body.image
-    }).then(function() {
-      res.redirect(307, "/api/login");
+      title: req.body.data.title,
+      reviews: req.body.data.reviews,
+      image: req.body.data.image
+    }).then(function(response) {
+      res.json(response)
     }).catch(function(err) {
+      console.log(err)
       res.status(401).json(err);
     });
   })
