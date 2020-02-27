@@ -44,52 +44,45 @@ module.exports = function(app) {
     }
   });
 
-  app.put("/api/user_data", function(req, res) {
-    if (!req.user) {
-      res.json({});
-    } else {
-      console.log(req.body)
-    }
-  });
-
   app.get("/api/movies", function(req, res) {
     db.Movie.findAll({}).then(function(dbMovie) {
       res.json(dbMovie);
     });
   });
-  // ​
-  // app.post("/api/movies/reviews", function(req, res) {
-  // ​
-  // });
-  // ​
-  // app.get("/api/books/reviews", function(req, res) {
-  // ​
-  // });
-  // ​
 
- 
-  app.post("/api/review/books", function(req, res) {
-    console.log(req.body)
-  //   ​db.Book.create({
-  //     title: req.body.title,
-  //     author: req.body.author,
-  //     review: req.body.review
-  //     // image: imagequery.image
-  //   })
-  //     .then(function() {
-  //       res.redirect(307, "/api/reviews");
-  //     })
-  //     .catch(function(err) {
-  //       res.status(401).json(err);
-  //     });
+  app.post("/api/movies", function(req, res) {
+    console.log(req.body.data);
+    db.Movie.create({
+      title: req.body.data.title,
+      reviews: req.body.data.reviews,
+      image: req.body.data.image
+    }).then(function(response) {
+      res.json(response)
+    }).catch(function(err) {
+      console.log(err)
+      res.status(401).json(err);
+    });
   });
-  // ​
-  // app.get("/api/podcasts/reviews", function(req, res) {
-  // ​
-  // });
-  // ​
-  // app.post("/api/podcasts/reviews", function(req, res) {
-  // ​
-  // });
+
+  app.get("/api/books", function(req, res) {
+    db.Book.findAll({}).then(function(dbBook) {
+      res.json(dbBook);
+    });
+  });
+
+  app.post("/api/books", function(req, res) {
+    console.log(req.body.data);
+    db.Book.create({
+      title: req.body.title,
+      author: req.body.author,
+      reviews: req.body.reviews,
+      image: req.body.image
+    }).then(function(response) {
+      res.json(response)
+    }).catch(function(err) {
+      console.log(err)
+      res.status(401).json(err);
+    });
+  });
 
 };

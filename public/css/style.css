@@ -116,7 +116,7 @@ button {
     z-index: -1;
     background-image: url(../assets/image1.jpeg);
     width: 100%;
-    height: 300px;
+    height: 400px;
     background-size: 1200px;
     background-position-y: 735px;
     position: absolute;
@@ -133,7 +133,7 @@ button {
 
 .review_block {
     text-align: center;
-    padding-top: 60px;
+    padding-top: 120px;
     min-width: 300px;
 }
 
@@ -143,7 +143,7 @@ button {
 
 
 .result_card {
-    border: rgb(0, 110, 255) 1px solid;
+    border: #C0C0C0 1px solid;
     border-radius: 20px;
     margin: 20px;
     padding: 15px;
@@ -155,3 +155,23 @@ button {
 .login_box {
     max-width: 400px;
 }
+
+.log_in {
+    background-color: rosybrown;
+    color: black;
+}
+
+.sign_up {
+    background-color: rosybrown;
+    color: black;
+}
+
+/*footer*/
+
+.footer-wrapper {
+    position: relative;
+    text-align: center;
+    color: black;
+    background-color: rosybrown;
+}
+

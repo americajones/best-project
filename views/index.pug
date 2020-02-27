@@ -1,8 +1,10 @@
 doctype html
 html
 head
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
     link(rel="stylesheet" href="../css/style.css")
-    script(src="https://code.jquery.com/jquery.js")
+    script(src="https://code.jquery.com/jquery.js")  
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
     title best app
 body
 -let User = {loggedOn: false}
@@ -10,16 +12,26 @@ body
     
         include includes/nav
     else
-        a.log_in(href="login") Log In
-        a.sign_up(href="signup") Sign Up
+        a.log_in.btn-floating.btn-large.pulse(href="login") LogIn
+          i.material-icons        
+        a.sign_up.btn-floating.btn-large.pulse(href="signup") SignUp
+          i.material-icons
+                  
         br
 
         h1.intro Your Next Binge!
 
-    p Reviews:
+    p Check out a sample of the latest and greatest reviews. Create an account to be part of the conversation:
 
     .result_row
     
         include includes/result
         include includes/result
         include includes/result
+
+    .footer-wrapper
+        footer &copy; 2020 Copyright
+         
+
+
+
