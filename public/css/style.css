@@ -173,12 +173,7 @@ button {
     color: black;
 }
 
-/*footer*/
-
-.footer-wrapper {
-    position: relative;
+.text {
     text-align: center;
-    color: black;
-    background-color: rosybrown;
 }
 
