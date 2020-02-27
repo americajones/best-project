@@ -131,7 +131,7 @@ button {
 }
 
 
-.review_block {
+.review_block { 
     text-align: center;
     padding-top: 120px;
     min-width: 300px;
@@ -152,7 +152,14 @@ button {
     width: 200px;
 }
 
+.result_row {
+    text-align: center;
+}
+
 .login_box {
+    padding-top: 10%;
+    text-align: center;
+    margin: 0 auto;
     max-width: 400px;
 }
 
