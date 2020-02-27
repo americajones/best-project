@@ -12,8 +12,11 @@ body
     
         include includes/nav
     else
-        a.log_in(href="login") Log In
-        a.sign_up(href="signup") Sign Up
+        a.log_in.btn-floating.btn-large.pulse(href="login") LogIn
+          i.material-icons        
+        a.sign_up.btn-floating.btn-large.pulse(href="signup") SignUp
+          i.material-icons
+                  
         br
 
         h1.intro Your Next Binge!
@@ -25,3 +28,10 @@ body
         include includes/result
         include includes/result
         include includes/result
+
+    .footer-wrapper
+        footer &copy; 2020 Copyright
+         
+
+
+

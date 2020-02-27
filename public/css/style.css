@@ -155,3 +155,23 @@ button {
 .login_box {
     max-width: 400px;
 }
+
+.log_in {
+    background-color: rosybrown;
+    color: black;
+}
+
+.sign_up {
+    background-color: rosybrown;
+    color: black;
+}
+
+/*footer*/
+
+.footer-wrapper {
+    position: relative;
+    text-align: center;
+    color: black;
+    background-color: rosybrown;
+}
+
