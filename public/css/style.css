@@ -107,12 +107,11 @@ button {
     margin: auto;
 }
 
-#category {
-    padding: 3px;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-}
+.dropdown-content{
+    width: max-content !important;
+    height:auto !important;
+    text-align: center;
+ }
 
 /* reviews pages */
 

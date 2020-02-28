@@ -85,15 +85,23 @@ function createMovie() {
 //     })
 // }
 
+$(document).ready(function(){
+    $('select').formSelect(); 
+}); 
+
 $("#category").on("change", function(event) {
     if ($("#category").val() === "book") {
-        window.location.replace("/booksubmit");
+        window.location.href = "/booksubmit";
         console.log("book book");
     }
-    else {
-        window.location.replace("/submit");
-    }
 })
+
+
+$("#return_butt").on("click", function(event) {
+    event.preventDefault();
+    window.location.href = `/submit`
+
+});
 
 $("#submit_butt").on("click", function(event) {
     event.preventDefault();
