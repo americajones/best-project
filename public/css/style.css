@@ -164,10 +164,14 @@ button {
     display: inline-block;
     height: 250px;
     width: 200px;
+    max-width: 200px;
+    margin-bottom: 140px;
 }
 
 .result_row {
     text-align: center;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 .login_box {

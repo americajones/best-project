@@ -9,7 +9,14 @@ module.exports = function(app) {
             console.log
             res.render("submit")
         }else{
-            res.render("index")
+            db.Movie.findAll({order:[['id', 'DESC']], limit: 9}).then(data => {
+                console.log('rendering reviews')
+                let info = []
+                for (let i = 0 ; i <= 8; i++){
+                    info.push(data[i].dataValues)
+                }
+                res.render("index", {reviews: info})
+            })
         }
     });
     
@@ -22,11 +29,11 @@ module.exports = function(app) {
     });
 
     app.get("/reviews", (req, res) => {
-        db.Movie.findAll({order:[['id', 'DESC']], limit: 10}).then(data => {
+        db.Movie.findAll({order:[['id', 'DESC']], limit: 9}).then(data => {
             console.log('rendering reviews')
             let info = []
             // data[(data.length-1), (data.length-2), (data.length-3)].dataValues
-            for (let i = 0 ; i <= 9; i++){
+            for (let i = 0 ; i <= 8; i++){
                 info.push(data[i].dataValues)
             }
             // console.log(data[0].dataValues, data[1].dataValues, data[2].dataValues)
