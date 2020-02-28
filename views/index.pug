@@ -21,10 +21,11 @@ body
 
     p.text Check out a sample of the latest and greatest reviews. Create an account to be part of the conversation:
 
-    .result_row
+    .result_row   
     
-    
-        //- include includes/result
-        //- include includes/result
-        //- include includes/result
+        each review in reviews
+           .result_card
+                img(src=review.image, alt="", height="220px")
+                h4 #{review.title}
+                p #{review.reviews}
 
