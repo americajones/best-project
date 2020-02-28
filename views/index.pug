@@ -12,16 +12,14 @@ body
     
         include includes/nav
     else
-        a.log_in.btn-floating.btn-large.pulse(href="login") LogIn
-          i.material-icons        
-        a.sign_up.btn-floating.btn-large.pulse(href="signup") SignUp
-          i.material-icons
-                  
-        br
-
+        div.pink_buttons 
+          a.log_in.btn-floating.btn-large.pulse(href="login") LogIn
+            i.material-icons        
+          a.sign_up.btn-floating.btn-large.pulse(href="signup") SignUp
+            i.material-icons                  
         h1.intro Your Next Binge!
 
-    p Check out a sample of the latest and greatest reviews. Create an account to be part of the conversation:
+    p.text Check out a sample of the latest and greatest reviews. Create an account to be part of the conversation:
 
     .result_row
     
@@ -29,10 +27,4 @@ body
         //- include includes/result
         //- include includes/result
         //- include includes/result
-
-    .footer-wrapper
-        footer &copy; 2020 Copyright
-         
-
-
 
