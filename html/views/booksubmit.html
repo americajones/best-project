@@ -1,4 +1,30 @@
-
+<!DOCTYPE html>
+<html></html>
+<head>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <title>best app</title>
+</head>
+<body>
+  <div class="page_header"><a class="log_out" href="logout">Log Out</a>
+    <h1 class="page_name">Your Next Binge!</h1>
+    <div class="nav"><a href="/"> Home |</a><a href="reviews"> Reviews |</a><a href="submit"> Submit </a></div>
+  </div>
+  <div class="submit_box">
+    <h3>Go Ahead, be honest!</h3>
+    <select id="category">
+      <option value="movie">Movie</option>
+      <option value="book" selected>Book</option>
+      <option value="podcast">Podcast</option>
+      <console class="log" category.value></console>
+    </select><br><br>
+    <input class="form" type="text" id="title" placeholder="Title?"><br><br>
+    <input class="form" type="text" id="author" placeholder="Author?"><br><br>
+    <textarea class="form" id="reviews" cols="70" rows="10" placeholder="What did you think?"></textarea><br><br>
+    <button class="submit" id="submit_butt" type="submit">Submit</button>
+  </div>
+</body>
+<script>
 // Functions Definition
 // ERR
 function handleLoginErr(err) {
@@ -118,3 +144,4 @@ $("#submit_butt").on("click", function(event) {
         //     break;
   }
 });
+</script>
