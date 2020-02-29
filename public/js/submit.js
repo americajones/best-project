@@ -25,7 +25,7 @@ function createBook() {
             image: image
         }).then(function(data) {
             console.log(data);
-            window.location.href = `/review`
+            window.location.href = `/bookreview`
             // If there's an error, handle it by throwing up a bootstrap alert
         // }).catch(handleLoginErr)
     });
@@ -85,15 +85,23 @@ function createMovie() {
 //     })
 // }
 
+$(document).ready(function(){
+    $('select').formSelect(); 
+}); 
+
 $("#category").on("change", function(event) {
     if ($("#category").val() === "book") {
-        window.location.replace("/booksubmit");
+        window.location.href = "/booksubmit";
         console.log("book book");
     }
-    else {
-        window.location.replace("/submit");
-    }
 })
+
+
+$("#return_butt").on("click", function(event) {
+    event.preventDefault();
+    window.location.href = `/submit`
+
+});
 
 $("#submit_butt").on("click", function(event) {
     event.preventDefault();
@@ -103,7 +111,7 @@ $("#submit_butt").on("click", function(event) {
     switch(searchCategory) {
         case "book":
             // on click function for book api call
-            event.preventDefault();
+            // event.preventDefault();
             createBook();
             break;
         case "movie":

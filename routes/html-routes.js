@@ -51,6 +51,13 @@ module.exports = function(app) {
         })
     });
     
+    app.get("/bookreview", (req, res) => {
+        db.Book.findAll({}).then(data=>{
+           let info = data[data.length-1].dataValues
+            res.render("bookreview", info)
+        })
+    });
+
     app.get("/signup", (req, res) => {
         res.render("signup")
     });
