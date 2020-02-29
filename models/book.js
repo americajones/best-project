@@ -17,6 +17,5 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: null
     }
   });
-
   return Book;
 };

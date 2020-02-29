@@ -4,16 +4,10 @@ var passport = require("../config/passport");
 
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    console.log('this is user info', req.user.dataValues)
     res.redirect("/")
   });
 
   app.post("/api/signup", function(req, res) {
-  
-    console.log("are we here");
-    console.log(req);
-    console.log(req.body);
-    
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -32,11 +26,9 @@ module.exports = function(app) {
   });
 
   app.get("/api/user_data", function(req, res) {
-    console.log('GETTING USER DATA')
     if (!req.user) {
       res.json({});
     } else {
-      console.log(req.user)
       res.json({
         email: req.user.email,
         id: req.user.id,
@@ -51,7 +43,6 @@ module.exports = function(app) {
   });
 
   app.post("/api/movies", function(req, res) {
-    console.log(req.body.data);
     db.Movie.create({
       title: req.body.data.title,
       reviews: req.body.data.reviews,
@@ -59,7 +50,6 @@ module.exports = function(app) {
     }).then(function(response) {
       res.json(response)
     }).catch(function(err) {
-      console.log(err)
       res.status(401).json(err);
     });
   });
@@ -71,7 +61,6 @@ module.exports = function(app) {
   });
 
   app.post("/api/books", function(req, res) {
-    console.log(req.body.data);
     db.Book.create({
       title: req.body.title,
       author: req.body.author,

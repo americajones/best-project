@@ -22,8 +22,6 @@ body {
     font-family: "Rock Salt", Arial, Helvetica, sans-serif;
 }
 
-
-
 .nav {
     padding-top: 20px;
     min-width: 210px;
@@ -51,7 +49,6 @@ button {
 }
 
 /* index page */
-
 .intro {
     font-family: "Rock Salt", Arial, Helvetica, sans-serif;
     text-align: center;
@@ -78,7 +75,6 @@ button {
 }
 
 /* submit page */
-
 .submit {
     float: right;
 }
@@ -114,7 +110,6 @@ button {
  }
 
 /* reviews pages */
-
 .page_header_clear {
     background-color: transparent;
     color: white;
@@ -142,7 +137,6 @@ button {
     height: 200px;
     width: 150px;
 }
-
 
 .review_block { 
     text-align: center;
@@ -199,5 +193,3 @@ button {
     padding-right: 3%;
     padding-left: 3%;
 }
-
-

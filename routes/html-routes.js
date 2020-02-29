@@ -3,10 +3,8 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 var db = require("../models");
 
 module.exports = function(app) {
-
     app.get("/", (req, res) => {
         if(req.user){
-            console.log
             res.render("submit")
         }else{
             db.Movie.findAll({order:[['id', 'DESC']], limit: 9}).then(data => {
@@ -30,17 +28,11 @@ module.exports = function(app) {
 
     app.get("/reviews", (req, res) => {
         db.Movie.findAll({order:[['id', 'DESC']], limit: 9}).then(data => {
-            console.log('rendering reviews')
             let info = []
-            // data[(data.length-1), (data.length-2), (data.length-3)].dataValues
             for (let i = 0 ; i <= 8; i++){
                 info.push(data[i].dataValues)
             }
-            // console.log(data[0].dataValues, data[1].dataValues, data[2].dataValues)
-            console.log(info)
             res.render("reviews", {reviews: info})
-           // {review: data[0].dataValues, review: data[1].dataValues, review:data[2].dataValues}
-            // res.render("index", data.dataValues)
         })
     });
 
