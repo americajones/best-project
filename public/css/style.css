@@ -9,6 +9,7 @@ body {
 }
 
 .page_header {
+    background-image: url("public\assets\next_binge.png");
     background-color: rgb(49, 49, 49);
     color: white;
     display: flex;
@@ -42,9 +43,9 @@ a {
 }
 
 button {
-    background-color: #78909c;
+    background-color:#FFFDD0;
     color: black;
-    border: solid 1px white;
+    border: solid 1px black;
     border-radius: 15px;
     padding: 10px;
 }
@@ -54,7 +55,8 @@ button {
 .intro {
     font-family: "Rock Salt", Arial, Helvetica, sans-serif;
     text-align: center;
-    padding: 30px;
+    padding-top: 0%;
+    padding-bottom: 3%;
     min-width: 210px;
 }
 
@@ -81,8 +83,20 @@ button {
     float: right;
 }
 
+.form {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #78909c;
+    resize: none;
+}
+
 .submit_box {
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    padding-bottom: 15%;
     max-width: 500px;
     margin: auto;
 }
@@ -93,12 +107,11 @@ button {
     margin: auto;
 }
 
-#category {
-    padding: 3px;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-}
+.dropdown-content{
+    width: max-content !important;
+    height:auto !important;
+    text-align: center;
+ }
 
 /* reviews pages */
 
@@ -131,7 +144,7 @@ button {
 }
 
 
-.review_block {
+.review_block { 
     text-align: center;
     padding-top: 120px;
     min-width: 300px;
@@ -139,8 +152,8 @@ button {
 
 .return_butt {
     margin-top: 30px;
+    margin-bottom: 50px;
 }
-
 
 .result_card {
     border: #C0C0C0 1px solid;
@@ -150,9 +163,20 @@ button {
     display: inline-block;
     height: 250px;
     width: 200px;
+    max-width: 200px;
+    margin-bottom: 140px;
+}
+
+.result_row {
+    text-align: center;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 .login_box {
+    padding-top: 10%;
+    text-align: center;
+    margin: 0 auto;
     max-width: 400px;
 }
 
@@ -166,12 +190,14 @@ button {
     color: black;
 }
 
-/*footer*/
-
-.footer-wrapper {
-    position: relative;
+.text {
     text-align: center;
-    color: black;
-    background-color: rosybrown;
 }
+
+.pink_buttons {
+    padding-top: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
 

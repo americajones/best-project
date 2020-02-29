@@ -1,4 +1,30 @@
-
+<!DOCTYPE html>
+<html></html>
+<head>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <title>best app</title>
+</head>
+<body>
+  <div class="page_header"><a class="log_out" href="logout">Log Out</a>
+    <h1 class="page_name">Your Next Binge!</h1>
+    <div class="nav"><a href="/"> Home |</a><a href="reviews"> Reviews |</a><a href="submit"> Submit </a></div>
+  </div>
+  <div class="submit_box">
+    <h3>Go Ahead, be honest!</h3>
+    <select id="category">
+      <option value="movie">Movie</option>
+      <option value="book" selected>Book</option>
+      <option value="podcast">Podcast</option>
+      <console class="log" category.value></console>
+    </select><br><br>
+    <input class="form" type="text" id="title" placeholder="Title?"><br><br>
+    <input class="form" type="text" id="author" placeholder="Author?"><br><br>
+    <textarea class="form" id="reviews" cols="70" rows="10" placeholder="What did you think?"></textarea><br><br>
+    <button class="submit" id="submit_butt" type="submit">Submit</button>
+  </div>
+</body>
+<script>
 // Functions Definition
 // ERR
 function handleLoginErr(err) {
@@ -25,7 +51,7 @@ function createBook() {
             image: image
         }).then(function(data) {
             console.log(data);
-            window.location.href = `/bookreview`
+            window.location.href = `/review`
             // If there's an error, handle it by throwing up a bootstrap alert
         // }).catch(handleLoginErr)
     });
@@ -85,23 +111,15 @@ function createMovie() {
 //     })
 // }
 
-$(document).ready(function(){
-    $('select').formSelect(); 
-}); 
-
 $("#category").on("change", function(event) {
     if ($("#category").val() === "book") {
-        window.location.href = "/booksubmit";
+        window.location.replace("/booksubmit");
         console.log("book book");
     }
+    else {
+        window.location.replace("/submit");
+    }
 })
-
-
-$("#return_butt").on("click", function(event) {
-    event.preventDefault();
-    window.location.href = `/submit`
-
-});
 
 $("#submit_butt").on("click", function(event) {
     event.preventDefault();
@@ -111,7 +129,7 @@ $("#submit_butt").on("click", function(event) {
     switch(searchCategory) {
         case "book":
             // on click function for book api call
-            // event.preventDefault();
+            event.preventDefault();
             createBook();
             break;
         case "movie":
@@ -126,3 +144,4 @@ $("#submit_butt").on("click", function(event) {
         //     break;
   }
 });
+</script>

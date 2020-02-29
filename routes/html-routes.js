@@ -9,17 +9,39 @@ module.exports = function(app) {
             console.log
             res.render("submit")
         }else{
-            res.render("index")
+            db.Movie.findAll({order:[['id', 'DESC']], limit: 9}).then(data => {
+                console.log('rendering reviews')
+                let info = []
+                for (let i = 0 ; i <= 8; i++){
+                    info.push(data[i].dataValues)
+                }
+                res.render("index", {reviews: info})
+            })
         }
     });
     
     app.get("/submit", isAuthenticated , (req, res) => {
         res.render("submit")
     });
+    
+    app.get("/booksubmit", isAuthenticated , (req, res) => {
+        res.render("booksubmit")
+    });
 
     app.get("/reviews", (req, res) => {
-        console.log('rendering reviews')
-        res.render("index")
+        db.Movie.findAll({order:[['id', 'DESC']], limit: 9}).then(data => {
+            console.log('rendering reviews')
+            let info = []
+            // data[(data.length-1), (data.length-2), (data.length-3)].dataValues
+            for (let i = 0 ; i <= 8; i++){
+                info.push(data[i].dataValues)
+            }
+            // console.log(data[0].dataValues, data[1].dataValues, data[2].dataValues)
+            console.log(info)
+            res.render("reviews", {reviews: info})
+           // {review: data[0].dataValues, review: data[1].dataValues, review:data[2].dataValues}
+            // res.render("index", data.dataValues)
+        })
     });
 
     app.get("/review", (req, res) => {
@@ -29,6 +51,13 @@ module.exports = function(app) {
         })
     });
     
+    app.get("/bookreview", (req, res) => {
+        db.Book.findAll({}).then(data=>{
+           let info = data[data.length-1].dataValues
+            res.render("bookreview", info)
+        })
+    });
+
     app.get("/signup", (req, res) => {
         res.render("signup")
     });
