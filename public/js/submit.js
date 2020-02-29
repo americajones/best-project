@@ -48,7 +48,7 @@ $(document).ready(function(){
 $("#category").on("change", function(event) {
     if ($("#category").val() === "book") {
         window.location.href = `/booksubmit`;
-    }
+    } else {  window.location.href = `/submit`;}
 })
 
 $(".return_butt").on("click", function(event) {
