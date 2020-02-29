@@ -6,11 +6,11 @@ function createBook() {
     let title = ($('#title').val().trim().toLowerCase().replace(/\s+/g, '-'));
     let author = ($('#author').val().trim())
     $.ajax({
-        url: `http://openlibrary.org/search.json?q=${title}`,
+        url: `https://openlibrary.org/search.json?q=${title}`,
         method: "GET"
       }).then(function(response) {  
         let isbn = (response.docs[0].isbn[0])
-        let image = (`http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
+        let image = (`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
         $.post("/api/books", {
             title: title,
             author: author,
