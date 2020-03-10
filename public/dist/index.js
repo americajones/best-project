@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#login_user").on("click",function(i){i.preventDefault();var a,s,n={email:$("#email_inp").val().trim(),password:$("#password_inp").val().trim()};n.email&&n.password&&(a=n.email,s=n.password,$.post("/api/login",{email:a,password:s},function(i,a){"success"===a&&(window.location="/submit")}),$("#email_inp").val(""),$("#password_inp").val(""))})});
